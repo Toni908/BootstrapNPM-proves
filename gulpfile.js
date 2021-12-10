@@ -28,5 +28,5 @@ function vetllarSCSS(cb){
   }
 
   exports.default = defaultTask
-  exports.sass = buildStyles2
+  exports.build = buildStyles2
   exports.sasswatch = vetllarSCSS
