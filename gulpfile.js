@@ -14,8 +14,8 @@ function defaultTask(cb) {
   }
 
   function minifyStyles() {
-    return gulp.src('./css/**/*.css')
-      .pipe(cleanCSS().on('error', sass.logError))
+    return gulp.src('./scss/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/css'));
   }
 
