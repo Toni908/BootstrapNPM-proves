@@ -20,7 +20,13 @@ function defaultTask(cb) {
   }
 
   function minifyJs() {
-    return gulp.src('./js/**/*.js' , './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
+    return gulp.src('./js/**/*.js')
+      .pipe(uglify().on('error', sass.logError))
+      .pipe(gulp.dest('./dist/js'));
+  }
+
+  function minifyJs2() {
+    return gulp.src('./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
       .pipe(uglify().on('error', sass.logError))
       .pipe(gulp.dest('./dist/js'));
   }
@@ -42,4 +48,4 @@ function minifyimg(){
   exports.minimitzajs = minifyJs
   exports.minimitzahtml = minifyhtml
   exports.minimitzaimg = minifyimg
-  exports.build = series(minifyStyles, minifyJs, minifyhtml, minifyimg)
+  exports.build = series(minifyStyles, minifyJs, minifyJs2, minifyhtml, minifyimg)
