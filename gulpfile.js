@@ -42,4 +42,4 @@ function minifyimg(){
   exports.minimitzajs = minifyJs
   exports.minimitzahtml = minifyhtml
   exports.minimitzaimg = minifyimg
-  exports.all = series(minifyStyles, minifyJs, minifyhtml, minifyimg)
+  exports.build = series(minifyStyles, minifyJs, minifyhtml, minifyimg)
