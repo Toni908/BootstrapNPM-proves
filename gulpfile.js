@@ -20,7 +20,7 @@ function defaultTask(cb) {
   }
 
   function minifyJs() {
-    return gulp.src('./js/**/*.js')
+    return gulp.src('./js/**/*.js' , './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
       .pipe(uglify().on('error', sass.logError))
       .pipe(gulp.dest('./dist/js'));
   }
